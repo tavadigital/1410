@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master Self Control | Bukan Malas, Kamu Belum Punya Sistem yang Cocok</title>
+<meta name="description" content="App untuk kamu yang tahu harus ngapain tapi gak bisa mulai. Tes pola 3 menit, tombol Aku Lagi Kabur, langkah pertama 5 menit, dan program 21 hari.">
+<meta property="og:title" content="Master Self Control | Bukan Malas, Kamu Belum Punya Sistem yang Cocok">
+<meta property="og:description" content="Tes pola kendali diri 3 menit, tombol Aku Lagi Kabur, dan langkah pertama 5 menit selama 21 hari. Dibuka dari browser, tanpa install.">
+<meta name="theme-color" content="#1D3157">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D3157'/%3E%3Cpath d='M16 44 A18 18 0 1 1 48 44' fill='none' stroke='%23FFFFFF' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M32 36 L42 26' stroke='%23E2662B' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='36' r='4.5' fill='%23E2662B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pri:#1D3157;
+  --pri-mid:#2E4A7D;
+  --pri-soft:#E7EDF6;
+  --pri-deep:#16264A;
+  --madu:#F5A06A;
+  --madu-soft:#FCEBDD;
+  --madu-text:#A8461A;
+  --bara:#C2563A;
+  --bara-soft:#FBEAE4;
+  --bg:#F7F5F0;
+  --pasir:#EEEAE2;
+  --card:#FFFFFF;
+  --line:#DED8CD;
+  --line-soft:#EAE5DC;
+  --ink:#1B2433;
+  --muted:#5B6575;
+  --muted-light:#7C8594;
+  --sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --radius:14px;
+  --radius-lg:20px;
+  --sinyal:#E2662B;
+  --sinyal-deep:#B84F1E;
+  --maxw:1120px;
+  --maxw-text:680px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden;}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;}
+h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-0.02em;color:var(--pri);font-family:var(--sans);}
+h1{font-size:clamp(31px,5.8vw,50px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;}
+h2{font-size:clamp(25px,4.2vw,36px);font-weight:800;}
+h3{font-size:clamp(20px,2.6vw,24px);font-weight:700;}
+h4{font-size:17px;font-weight:700;}
+p{margin:0 0 1rem;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:700;color:var(--pri);}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+.narrow{max-width:var(--maxw-text);margin-left:auto;margin-right:auto;}
+section{padding:56px 0;}
+@media(min-width:768px){section{padding:76px 0;}}
+.sec-alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.sec-deep{background:var(--pri-deep);color:#fff;}
+.sec-deep h2,.sec-deep h3{color:#fff;}
+.eyebrow{font-size:13.5px;font-weight:700;color:var(--pri-mid);margin:0 0 10px;}
+.eyebrow-bara{color:var(--bara);}
+.eyebrow-madu{color:var(--madu-text);}
+.lead{font-size:clamp(17px,2vw,19px);color:var(--muted);}
+.sec-deep .lead{color:#C7D2E6;}
+.center{text-align:center;}
+
+/* header */
+.site-head{background:var(--card);border-bottom:1px solid var(--line);padding:14px 0;position:relative;z-index:5;}
+.logo{display:inline-block;font-family:var(--sans);font-size:20px;font-weight:800;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;line-height:1.2;}
+.logo em{font-style:normal;color:var(--sinyal);}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--sinyal);color:#fff;text-decoration:none;
+  font-weight:800;font-size:17px;letter-spacing:-0.01em;
+  padding:17px 28px;border-radius:12px;border:none;cursor:pointer;
+  box-shadow:0 3px 0 var(--sinyal-deep);
+  transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
+  text-align:center;width:100%;
+}
+@media(min-width:560px){.btn{width:auto;font-size:18px;padding:18px 34px;}}
+.btn:hover{background:#CF5A22;transform:translateY(-1px);box-shadow:0 4px 0 var(--sinyal-deep);}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--sinyal-deep);}
+.btn:focus-visible{outline:3px solid var(--pri-mid);outline-offset:3px;}
+.sec-deep .btn{background:var(--sinyal);color:#fff;box-shadow:0 3px 0 #0E1830;}
+.sec-deep .btn:hover{background:#CF5A22;}
+.btn-note{font-size:14.5px;color:var(--muted);margin-top:12px;}
+.sec-deep .btn-note{color:#A8B7D2;}
+.cta-block{margin-top:26px;}
+
+/* hero */
+.hero{background:var(--card);padding:28px 0 44px;border-bottom:1px solid var(--line);}
+.hero-grid{display:block;}
+.hero-img{margin:22px -20px 24px;}
+@media(min-width:900px){
+  .hero{padding:64px 0 72px;}
+  .hero-grid{display:grid;grid-template-columns:1fr 460px;grid-template-areas:"hd img" "rest img";column-gap:56px;align-items:center;}
+  .hero-hd{grid-area:hd;align-self:end;}
+  .hero-rest{grid-area:rest;align-self:start;padding-top:18px;}
+  .hero-img{grid-area:img;margin:0;align-self:center;}
+  .hero-img img{border-radius:var(--radius-lg);}
+}
+.hero-bullets{list-style:none;padding:0;margin:22px 0 0;}
+.hero-bullets li{position:relative;padding-left:30px;margin-bottom:12px;font-size:16.5px;color:var(--ink);}
+.hero-bullets li::before{content:"";position:absolute;left:0;top:8px;width:16px;height:16px;border-radius:50%;background:var(--pri-soft);border:2px solid var(--pri-mid);}
+.hero-bullets b{color:var(--pri);}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:14.5px;color:var(--muted);font-weight:600;}
+.hero-facts span{white-space:nowrap;}
+
+/* cards */
+.grid{display:grid;gap:18px;}
+@media(min-width:760px){.grid-3{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:640px){.grid-2{grid-template-columns:repeat(2,1fr);}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;}
+.sec-alt .card{background:var(--bg);}
+.card-quote{font-size:20px;font-weight:800;color:var(--bara);margin:0 0 10px;line-height:1.3;letter-spacing:-0.01em;}
+.card p{font-size:16px;color:var(--muted);}
+.card h3{margin-bottom:10px;}
+
+/* termometer */
+.thermo{margin:30px 0 8px;}
+.thermo-bar{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;}
+.thermo-bar span{display:flex;align-items:center;justify-content:center;height:44px;border-radius:8px;font-weight:800;font-size:16px;}
+.thermo-bar span:nth-child(1){background:#2E7D74;color:#fff;}
+.thermo-bar span:nth-child(2){background:#4C9A84;color:#fff;}
+.thermo-bar span:nth-child(3){background:#7DB283;color:#1E3B2C;}
+.thermo-bar span:nth-child(4){background:#B4C46E;color:#3A4318;}
+.thermo-bar span:nth-child(5){background:#E2C054;color:#4A3A0A;}
+.thermo-bar span:nth-child(6){background:#EBA544;color:#4A2C06;}
+.thermo-bar span:nth-child(7){background:#E98A45;color:#4A2208;}
+.thermo-bar span:nth-child(8){background:#E06D4C;color:#fff;}
+.thermo-bar span:nth-child(9){background:#D0533F;color:#fff;}
+.thermo-bar span:nth-child(10){background:#B83C3A;color:#fff;}
+.thermo-lbl{display:grid;grid-template-columns:3fr 3fr 4fr;gap:4px;margin-top:8px;font-size:13.5px;font-weight:700;color:var(--muted);}
+.thermo-lbl span:nth-child(2){text-align:center;}
+.thermo-lbl span:nth-child(3){text-align:right;}
+.thermo-cap{font-size:15px;color:var(--muted);margin-top:12px;}
+@media(max-width:420px){.thermo-bar span{height:38px;font-size:14px;border-radius:6px;}.thermo-bar{gap:3px;}}
+
+.pilar{border-left:4px solid var(--pri-mid);padding:4px 0 4px 18px;margin-bottom:20px;}
+.pilar.p-anak{border-color:#7DB283;}
+.pilar.p-ortu{border-color:var(--madu);}
+.pilar.p-darurat{border-color:var(--bara);}
+.pilar h4{margin-bottom:4px;color:var(--pri);}
+.pilar p{font-size:16px;color:var(--muted);margin:0;}
+.pilar p b{color:var(--pri);}
+.golden{margin-top:28px;font-size:25px;font-weight:800;color:var(--pri);margin-bottom:6px;line-height:1.3;letter-spacing:-0.02em;}
+
+/* steps */
+.step{display:grid;gap:20px;padding:28px 0;border-top:1px solid var(--line);}
+.narrow + .step{border-top:none;}
+@media(min-width:1024px){
+  .step.dimg{grid-template-columns:1fr 1.45fr;gap:48px;align-items:center;}
+  .step-img{order:2;}
+}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--pri-mid);color:#fff;font-weight:800;font-size:16px;margin-bottom:12px;}
+.step-copy p{color:var(--muted);margin-top:10px;}
+.step-wide{display:block;}
+.step-wide .step-copy{max-width:var(--maxw-text);}
+
+/* screenshot frames */
+.shot{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:0 1px 3px rgba(29,49,87,.08);}
+.shot-r{max-width:300px;width:100%;margin-left:auto;margin-right:auto;}
+@media(min-width:1024px){.shot-r{max-width:100%;}}
+[data-zoom]{cursor:zoom-in;}
+.m-only{display:inline;}
+@media(min-width:700px){.m-only{display:none;}}
+figure{margin:0;}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;text-align:center;}
+
+/* feature rows */
+.feat{display:grid;gap:24px;padding:40px 0;border-top:1px solid var(--line);}
+@media(min-width:1024px){
+  .feat.dimg{grid-template-columns:1fr 1.45fr;gap:48px;align-items:center;}
+  .feat.dimg.flip{grid-template-columns:1.45fr 1fr;}
+  .feat-img{order:2;}
+  .feat.flip .feat-img{order:1;}
+  .feat.flip .feat-copy{order:2;}
+}
+.feat-copy h3{margin-bottom:12px;}
+.feat-copy p{color:var(--muted);font-size:16.5px;}
+.feat-pair{padding-top:40px;border-top:1px solid var(--line);}
+
+/* alat */
+.alat-tabs{display:none;}
+.alat-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 20px 6px;margin:0 -20px;}
+.alat-track::-webkit-scrollbar{display:none;}
+.alat-item{flex:0 0 80%;scroll-snap-align:center;}
+.alat-item h3{font-size:19px;margin:16px 0 6px;}
+.alat-item p{font-size:15.5px;color:var(--muted);margin:0;}
+.alat-dots{display:flex;justify-content:center;gap:8px;margin-top:18px;}
+.alat-dots button,.testi-dots button{width:8px;height:8px;padding:0;border:none;border-radius:50%;background:var(--line);cursor:pointer;transition:background .2s ease,width .2s ease;}
+.alat-dots button.on,.testi-dots button.on{background:var(--pri-mid);width:22px;border-radius:5px;}
+.alat-dots button:focus-visible,.testi-dots button:focus-visible{outline:2px solid var(--pri-mid);outline-offset:3px;}
+@media(min-width:1024px){
+  .alat-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:26px;flex-wrap:wrap;}
+  .alat-tabs button{font:inherit;font-size:15.5px;font-weight:700;color:var(--pri);background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:10px 20px;cursor:pointer;}
+  .alat-tabs button[aria-selected="true"]{background:var(--pri-mid);border-color:var(--pri-mid);color:#fff;}
+  .alat-tabs button:focus-visible{outline:3px solid var(--madu);outline-offset:2px;}
+  .alat-track{display:block;overflow:visible;padding:0;margin:0;}
+  .alat-item{display:none;}
+  .alat-item.on{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:center;}
+  .alat-item h3{font-size:24px;margin:0 0 10px;}
+  .alat-item p{font-size:16.5px;}
+  .alat-dots{display:none;}
+}
+.also{max-width:var(--maxw-text);margin:34px auto 0;text-align:center;font-size:16px;color:var(--muted);}
+
+/* jelas */
+.clear-card p{color:var(--muted);font-size:16.5px;}
+.clear-yes{border-top:4px solid var(--pri-mid);}
+.clear-no{border-top:4px solid var(--madu);}
+
+.fitlist{list-style:none;padding:0;margin:0;}
+.fitlist li{position:relative;padding-left:30px;margin-bottom:13px;font-size:16.5px;}
+.fitlist li::before{position:absolute;left:0;top:0;font-weight:800;font-size:17px;}
+.fit-yes li::before{content:"✓";color:var(--pri-mid);}
+.fit-no li::before{content:"✕";color:var(--bara);}
+
+/* table */
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;border:1px solid var(--line);border-radius:var(--radius);}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15.5px;background:var(--card);}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:none;}
+thead th{font-size:13.5px;font-weight:700;color:var(--muted);border-bottom:2px solid var(--line);}
+thead th.hl{color:var(--pri);}
+tbody td.hl{font-weight:700;color:var(--pri);background:var(--pri-soft);}
+tbody th{font-weight:600;color:var(--ink);width:19%;}
+
+/* testimoni */
+.testi-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 20px 6px;margin:0 -20px;}
+.testi-grid::-webkit-scrollbar{display:none;}
+.testi-grid img{flex:0 0 78%;scroll-snap-align:center;width:100%;height:auto;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 1px 3px rgba(29,49,87,.08);}
+.testi-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+@media(min-width:700px){
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;overflow:visible;padding:0;margin:0;}
+  .testi-grid img{flex:none;}
+  .testi-dots{display:none;}
+}
+
+/* nilai (naratif) */
+.story{max-width:var(--maxw-text);margin:0 auto 34px;}
+.story p{font-size:clamp(17px,2vw,18.5px);color:var(--muted);}
+.story p.punch{font-size:clamp(19px,2.4vw,22px);font-weight:700;color:var(--pri);line-height:1.45;margin-top:22px;}
+.price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 22px;max-width:620px;margin:0 auto;}
+.sec-alt .price-card{background:var(--bg);}
+@media(min-width:640px){.price-card{padding:36px;}}
+.incl{list-style:none;padding:0;margin:18px 0 0;}
+.incl li{position:relative;padding:10px 0 10px 30px;border-bottom:1px solid var(--line-soft);font-size:16px;}
+.incl li:last-child{border-bottom:none;}
+.incl li::before{content:"✓";position:absolute;left:0;top:10px;font-weight:800;color:var(--pri-mid);}
+.once-box{text-align:center;background:var(--madu-soft);border-radius:var(--radius);padding:18px 20px;margin:24px 0 0;font-size:16.5px;color:var(--ink);}
+.once-box b{display:block;font-size:19px;color:var(--pri);margin-bottom:2px;}
+
+.flow{max-width:620px;margin:40px auto 0;}
+.flow h3{text-align:center;margin-bottom:18px;font-size:clamp(19px,2.4vw,22px);}
+.flow ol{list-style:none;padding:0;margin:0;counter-reset:f;}
+.flow li{counter-increment:f;position:relative;padding:0 0 18px 48px;font-size:16px;color:var(--muted);}
+.flow li:last-child{padding-bottom:0;}
+.flow li::before{content:counter(f);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--pri-soft);color:var(--pri);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.flow li b{display:block;color:var(--pri);font-size:16.5px;}
+
+/* faq */
+.faq-key{background:var(--card);border:3px solid var(--madu);border-radius:var(--radius);padding:22px;margin-bottom:16px;}
+.faq-key h3{font-size:clamp(20px,3.2vw,23px);margin-bottom:12px;}
+.faq-key p{font-size:17.5px;color:var(--muted);margin:0 0 10px;}
+.faq-key ol{margin:0;padding:0 0 0 24px;font-size:clamp(17.5px,2.6vw,19px);line-height:1.5;}
+.faq-key li{margin-bottom:10px;padding-left:4px;}
+.faq-key li:last-child{margin-bottom:0;}
+.faq-key li::marker{font-weight:800;color:var(--madu-text);}
+.faq-key b{color:var(--pri);}
+.faq{border-top:1px solid var(--line);margin-top:30px;}
+.faq details{border-bottom:1px solid var(--line);}
+.faq summary{cursor:pointer;padding:18px 34px 18px 0;position:relative;font-weight:700;font-size:16.5px;color:var(--pri);list-style:none;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"";position:absolute;right:6px;top:26px;width:9px;height:9px;border-right:2.5px solid var(--pri-mid);border-bottom:2.5px solid var(--pri-mid);transform:rotate(45deg);transition:transform .18s ease;}
+.faq details[open] summary::after{transform:rotate(-135deg);top:28px;}
+.faq summary:focus-visible{outline:2px solid var(--pri-mid);outline-offset:2px;}
+.faq .ans{padding:0 0 20px;color:var(--muted);font-size:16.5px;}
+
+.closing-line{font-size:25px;font-weight:800;color:#fff;margin-top:24px;line-height:1.3;letter-spacing:-0.02em;}
+
+/* sticky bar */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);padding:10px 16px;box-shadow:0 -3px 14px rgba(29,49,87,.12);display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s ease;}
+.sticky-cta.on{transform:translateY(0);}
+.sticky-cta .sp{flex:1;min-width:0;}
+.sticky-cta .sp b{display:block;font-size:16.5px;color:var(--pri);line-height:1.2;}
+.sticky-cta .sp small{font-size:12.5px;color:var(--muted);}
+.sticky-cta .btn{width:auto;padding:14px 22px;font-size:15.5px;flex-shrink:0;}
+@media(min-width:900px){.sticky-cta{display:none;}}
+body.has-sticky{padding-bottom:82px;}
+@media(min-width:900px){body.has-sticky{padding-bottom:0;}}
+
+/* footer */
+.site-foot{background:var(--card);border-top:1px solid var(--line);padding:30px 0;text-align:center;}
+.site-foot .logo{display:block;margin-bottom:6px;}
+.site-foot small{font-size:13.5px;color:var(--muted-light);}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(14,22,40,.92);display:none;align-items:center;justify-content:center;padding:56px 12px 20px;}
+.lb.on{display:flex;}
+.lb-inner{max-width:1400px;width:100%;max-height:100%;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:10px;}
+.lb img{width:auto;max-width:100%;max-height:86vh;margin:0 auto;border-radius:10px;}
+.lb-close{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.lb-close:focus-visible{outline:3px solid var(--madu);outline-offset:2px;}
+.lb-close svg{width:18px;height:18px;}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+.pilar.pl-layar{border-color:#3F6FB5;}
+.pilar.pl-kepepet{border-color:#C2563A;}
+.pilar.pl-bingung{border-color:#7A5BA8;}
+.pilar.pl-takut{border-color:#B08A2E;}
+.pilar.pl-baterai{border-color:#4B8C86;}
+.eyebrow-sinyal{color:var(--sinyal-deep);}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Master Self Control, halaman utama">Master Self <em>Control</em></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-hd">
+        <h1>Bukan malas. Kamu cuma belum punya sistem yang cocok sama cara otakmu kerja.</h1>
+      </div>
+      <div class="hero-img">
+        <img src="img/hero-mockup.webp" alt="Master Self Control: berhenti menunda, mulai dari 5 menit. Tes pola 3 menit, mulai 5 menit, program 21 hari" width="980" height="1232" fetchpriority="high">
+      </div>
+      <div class="hero-rest">
+        <p class="lead">Kamu tahu persis harus ngapain. Masalahnya, tiap kali mau mulai, tangan sudah buka HP duluan. Itu bukan soal niat. Master Self Control adalah app di HP yang membaca pola kendali dirimu lewat tes 3 menit, menangkap momen saat kamu mulai kabur dari kerjaan, lalu memecah kerjaan yang ditunda jadi langkah pertama 5 menit, selama 21 hari.</p>
+        <ul class="hero-bullets">
+          <li><b>Tahu harus ngapain, tapi gak bisa mulai?</b> Pemecah Tugas mengubah kerjaan besar jadi satu langkah 5 menit yang jelas.</li>
+          <li><b>Baru buka file, tangan udah ambil HP?</b> Tekan Aku Lagi Kabur. Pilih mulai 5 menit, atau istirahat sah 10 menit yang ada batas waktunya.</li>
+          <li><b>Rencana selalu buyar di hari ketiga?</b> Peta 21 hari kasih satu langkah tiap hari, dan app mencatat jam berapa kamu biasa kabur.</li>
+        </ul>
+        <div class="cta-block">
+          <a class="btn" href="checkout.html">Mulai Tes 3 Menit →</a>
+          <p class="btn-note">Dibuka dari browser HP atau laptop. Tanpa install, tanpa akun.</p>
+        </div>
+        <div class="hero-facts">
+          <span>Tes 3 menit</span>
+          <span>Langkah 5 menit</span>
+          <span>Program 21 hari</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADEGAN -->
+<section>
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:34px;">
+      <h2>Baca tiga ini. Kalau ada satu yang kejadian minggu ini, kamu di tempat yang benar.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <p class="card-quote">“Gimana laporannya, udah sampai mana?”</p>
+        <p>Atasan tanya sambil lewat. Kamu jawab “lagi jalan, Pak”, padahal filenya baru dibuka dua kali minggu ini, dan dua-duanya berakhir di YouTube. Malam itu kamu janji ke diri sendiri besok pagi langsung dikerjakan.</p>
+      </div>
+      <div class="card">
+        <p class="card-quote">“Jam dua pagi, baru setengah.”</p>
+        <p>Deadline jam sembilan. Kerjaan yang punya waktu dua minggu akhirnya dikerjakan dalam satu malam, ditemani kopi ketiga. Selesai sih. Tapi kamu tahu hasilnya bisa jauh lebih bagus, dan kamu bersumpah ini yang terakhir. Itu sumpah yang sama dengan bulan lalu.</p>
+      </div>
+      <div class="card">
+        <p class="card-quote">“Katanya Sabtu mau dibenerin.”</p>
+        <p>Lampu dapur, rak yang miring, atau janji ngajak anak jalan. Sudah mundur tiga minggu. Istrimu sekarang gak mengingatkan lagi, dan diamnya justru lebih berat dari omelannya.</p>
+      </div>
+    </div>
+    <p class="narrow lead center" style="margin-top:30px;">Tiga adegan ini kelihatan beda. Akarnya sama, dan bukan karena kamu malas atau gak punya tanggung jawab.</p>
+  </div>
+</section>
+
+<!-- MEKANISME -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow">
+      <h2>Kamu bukan gak mau kerja. Kamu cuma kalah cepat sama tangan sendiri.</h2>
+      <p style="margin-top:18px;">Otak lebih gampang memilih yang hasilnya langsung terasa, seperti notifikasi, video, dan tab baru, daripada kerjaan yang hasilnya baru terasa nanti. Tiap orang kalahnya di titik yang berbeda. Itu sebabnya tips “mulai saja” gak pernah mempan buat kamu: tips itu gak tahu di titik mana kamu kalah.</p>
+      <p>Tes di dalam app membaca titik itu. Ada lima pola:</p>
+
+      <div style="margin-top:26px;">
+        <div class="pilar pl-layar"><h4>Kabur ke Layar</h4><p>Baru buka file, tangan udah buka HP atau tab lain.</p></div>
+        <div class="pilar pl-kepepet"><h4>Mesin Kepepet</h4><p>Baru bisa gerak kalau deadline udah di depan mata.</p></div>
+        <div class="pilar pl-bingung"><h4>Bingung Langkah Pertama</h4><p>Kerjaannya kelihatan terlalu besar, jadi gak tahu mulai dari mana.</p></div>
+        <div class="pilar pl-takut"><h4>Takut Hasilnya Jelek</h4><p>Diulang terus karena belum puas, akhirnya gak pernah dikirim.</p></div>
+        <div class="pilar pl-baterai"><h4>Baterai Habis Duluan</h4><p>Pulang kerja, tenaga sudah habis sebelum janji di rumah sempat disentuh.</p></div>
+      </div>
+
+      <p style="margin-top:26px;">Dari polamu, app menyusun cara kerjanya sendiri. Yang Kabur ke Layar dapat <b>ritual 30 detik</b> sebelum timer jalan. Yang Bingung Langkah Pertama dapat <b>Pemecah Tugas</b> di depan. Yang Kepepet dapat <b>rencana mundur</b> dari deadline.</p>
+
+      <p class="golden">Targetnya bukan kerja 8 jam tanpa jeda. Targetnya mulai, dan mulai lagi setelah kabur.</p>
+      <p style="color:var(--muted);">Aturan yang dijaga app: kamu gak pernah diminta kerja dua jam. Yang diminta cuma 5 menit pertama.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARA KERJA -->
+<section>
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:10px;">
+      <h2>Kamu gak perlu menyusun sistemnya. App-nya yang nuntun.</h2>
+    </div>
+
+    <div class="step step-wide">
+      <div class="step-copy">
+        <div class="step-num">1</div>
+        <h3>Masukkan kode akses</h3>
+        <p>Kodenya ada di Panduan Akses di emailmu. Cukup sekali, setelah itu tersimpan.</p>
+      </div>
+    </div>
+
+    <div class="step dimg">
+      <div class="step-copy">
+        <div class="step-num">2</div>
+        <h3>Jawab tes pola, sekitar 3 menit</h3>
+        <p>Lima belas pertanyaan singkat tentang kapan kamu menunda dan ke mana kamu kabur. Hasilnya pola utamamu, pola kedua, jam rawanmu, dan satu langkah pertama untuk minggu ini.</p>
+      </div>
+      <div class="step-img">
+        <picture><source media="(min-width:1024px)" srcset="img/hasil-tes-d.webp" width="1400" height="868"><img class="shot shot-r" data-zoom src="img/hasil-tes.webp" alt="Layar hasil tes: pola utama Kabur ke Layar, penjelasan Ini bukan malas, dan yang app lakukan untukmu" width="728" height="1568" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="step step-wide">
+      <div class="step-copy">
+        <div class="step-num">3</div>
+        <h3>Buka Hari Ini, tekan Mulai 5 menit</h3>
+        <p>Ikuti ceklis 30 detik: HP dibalik, tab lain ditutup, minum sudah siap. Timer jalan, dan kamu tinggal mengerjakan satu langkah itu.</p>
+      </div>
+    </div>
+
+    <div class="cta-block narrow center" style="margin-top:34px;">
+      <a class="btn" href="checkout.html">Mulai Tes 3 Menit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FITUR -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow center">
+      <h2>Yang kamu pakai tiap hari</h2>
+    </div>
+
+    <div class="feat dimg" style="border-top:none;">
+      <div class="feat-copy">
+        <p class="eyebrow eyebrow-sinyal">Aku Lagi Kabur</p>
+        <h3>Tangan udah buka HP? Tekan tombol oranye.</h3>
+        <p style="margin-top:12px;">Tombolnya selalu ada di tengah menu. Tekan saat kamu sadar sedang kabur, catat dengan tiga ketukan, lalu pilih: mulai 5 menit sekarang, atau istirahat sah 10 menit. Istirahatnya ada timer, dan setelah habis tinggal satu tombol untuk balik ke kerjaan.</p>
+        <p>Bukan buat menghukum. Buat ketahuan kamu biasa kabur jam berapa.</p>
+      </div>
+      <div class="feat-img">
+        <picture><source media="(min-width:1024px)" srcset="img/kabur-d.webp" width="1400" height="868"><img class="shot shot-r" data-zoom src="img/kabur.webp" alt="Layar Aku Lagi Kabur: pilihan Mulai 5 menit atau Istirahat sah 10 menit" width="728" height="1568" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="feat dimg flip">
+      <div class="feat-copy">
+        <p class="eyebrow">Pemecah Tugas</p>
+        <h3>“Rekap data Excel” jadi “buka file, tulis judul kolom.”</h3>
+        <p style="margin-top:12px;">Pilih kerjaan yang sudah lama ditunda. App memecahnya jadi langkah-langkah kecil, dan langkah pertamanya selalu 5 menit.</p>
+        <p>Biasanya setelah langkah pertama, kamu lanjut sendiri.</p>
+      </div>
+      <div class="feat-img">
+        <picture><source media="(min-width:1024px)" srcset="img/pemecah-d.webp" width="1400" height="868"><img class="shot shot-r" data-zoom src="img/pemecah.webp" alt="Layar Pecah jadi langkah 5 menit: Rekap data di Excel dengan langkah pertama 5 menit dan langkah berikutnya" width="728" height="1568" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="feat dimg">
+      <div class="feat-copy">
+        <p class="eyebrow eyebrow-madu">Polaku</p>
+        <h3>Lihat sendiri kamu kabur jam berapa.</h3>
+        <p style="margin-top:12px;">Tiap kabur yang kamu catat masuk ke Peta Kabur. Setelah beberapa hari, kelihatan jam rawanmu, misalnya habis makan siang. Dari situ app memberi aturan, seperti memindahkan kerjaan berat ke pagi. Angka mingguannya juga terlihat: berapa kali mulai, berapa menit kerja, berapa janji tertepati.</p>
+        <p>Jadi kamu tahu apa yang berubah dari angka, bukan dari perasaan.</p>
+      </div>
+      <div class="feat-img">
+        <picture><source media="(min-width:1024px)" srcset="img/polaku-d.webp" width="1400" height="868"><img class="shot shot-r" data-zoom src="img/polaku.webp" alt="Layar Polaku: pola utama, angka 7 hari terakhir, dan Peta Kabur" width="728" height="1568" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="feat-pair">
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Topiknya pribadi. App-nya juga.</h3>
+          <p>Tanpa akun dan password. Catatanmu tersimpan di perangkatmu, bukan di server. Ganti HP? Pindahkan progres dengan satu kode.</p>
+        </div>
+        <div class="card">
+          <h3>Satu HP sudah cukup.</h3>
+          <p>Dibuka dari browser HP atau laptop. Di laptop, tombol Aku Lagi Kabur bisa ditekan dengan tombol K.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALAT -->
+<section>
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:30px;">
+      <h2>Dan alat untuk momen yang paling sering bikin kamu kalah.</h2>
+      <p class="lead" style="margin-top:12px;">Semuanya ada di menu Kerjaan, dipakai kapan pun dibutuhkan.<span class="m-only"> Geser untuk melihat yang lain.</span></p>
+    </div>
+
+    <div class="alat-tabs" role="tablist" aria-label="Pilih alat">
+      <button type="button" role="tab" id="tab-pemadam" aria-controls="alat-pemadam" aria-selected="true">Mode Pemadam</button>
+      <button type="button" role="tab" id="tab-mundur" aria-controls="alat-mundur" aria-selected="false" tabindex="-1">Rencana Mundur</button>
+      <button type="button" role="tab" id="tab-janji" aria-controls="alat-janji" aria-selected="false" tabindex="-1">Janji Kantor dan Rumah</button>
+    </div>
+
+    <div class="alat-track" id="alatTrack">
+      <div class="alat-item on" id="alat-pemadam" role="tabpanel" aria-labelledby="tab-pemadam">
+        <picture><source media="(min-width:1024px)" srcset="img/pemadam-d.webp" width="1400" height="868"><img class="shot" data-zoom src="img/pemadam.webp" alt="Layar Mode Pemadam: centang bagian minimum yang harus jadi, lalu urutan sprint 25 menit" width="728" height="1568" loading="lazy"></picture>
+        <div>
+          <h3>Mode Pemadam</h3>
+          <p>Deadline sudah mepet dan belum mulai. App membantu memilih bagian minimum yang harus jadi, lalu memecahnya jadi sprint 25 menit satu per satu. Bukan waktunya sempurna. Waktunya selesai.</p>
+        </div>
+      </div>
+      <div class="alat-item" id="alat-mundur" role="tabpanel" aria-labelledby="tab-mundur">
+        <picture><source media="(min-width:1024px)" srcset="img/rencana-mundur-d.webp" width="1400" height="868"><img class="shot" data-zoom src="img/rencana-mundur.webp" alt="Layar Rencana mundur: deadline, hari kerja, menit per hari, dan kalender dengan hari cadangan" width="728" height="1568" loading="lazy"></picture>
+        <div>
+          <h3>Rencana Mundur</h3>
+          <p>Isi deadline, hari yang bisa kamu pakai, dan berapa menit sehari yang realistis. App menyusun jadwal mundur dengan dua hari cadangan, supaya kamu gak perlu begadang di malam terakhir lagi.</p>
+        </div>
+      </div>
+      <div class="alat-item" id="alat-janji" role="tabpanel" aria-labelledby="tab-janji">
+        <picture><source media="(min-width:1024px)" srcset="img/janji-d.webp" width="1400" height="868"><img class="shot" data-zoom src="img/janji.webp" alt="Layar Janji: janji kantor dan rumah, skor janji tertepati minggu ini" width="728" height="1568" loading="lazy"></picture>
+        <div>
+          <h3>Janji Kantor dan Rumah</h3>
+          <p>Janji ke atasan dan janji ke anak atau istri dicatat di satu tempat, masing-masing dengan langkah pertamanya. Kalau tanggalnya lewat, app menawarkan tepati hari ini atau mundurkan, dan jumlah mundurnya tercatat jujur.</p>
+        </div>
+      </div>
+    </div>
+    <div class="alat-dots" id="alatDots" aria-hidden="true">
+      <button type="button" class="on" data-i="0" aria-label="Alat 1"></button>
+      <button type="button" data-i="1" aria-label="Alat 2"></button>
+      <button type="button" data-i="2" aria-label="Alat 3"></button>
+    </div>
+
+    <p class="also">Juga ada Ritual Senin Pagi untuk memilih maksimal 3 kerjaan seminggu, Tutup Hari 1 menit, Review Mingguan, Suara Fokus (brown noise, hujan, dengung kafe), dan Rapor 21 Hari yang membandingkan polamu di hari pertama dan hari ke-21.</p>
+  </div>
+</section>
+
+<!-- SUPAYA JELAS -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:28px;">
+      <h2>Supaya jelas dari awal</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card clear-card clear-yes">
+        <h3>Master Self Control bisa</h3>
+        <p>membaca pola kendali dirimu lewat tes 3 menit, menangkap momen saat kamu kabur, memecah kerjaan yang ditunda jadi langkah 5 menit, menyusun rencana mundur dari deadline, mencatat janji kantor dan rumah, dan menunjukkan apa yang berubah selama 21 hari lewat Peta Kabur, review mingguan, dan rapor. Setelah 21 hari ada Mode Rawat supaya kebiasaannya gak hilang.</p>
+      </div>
+      <div class="card clear-card clear-no">
+        <h3>Master Self Control bukan</h3>
+        <p>tes diagnosis ADHD atau gangguan apa pun, bukan psikolog, dan bukan kelas motivasi. App ini tidak menjanjikan naik jabatan atau gaji naik. Kalau kamu sulit fokus sejak kecil di hampir semua bidang hidup, disertai cemas berat, atau suasana hati turun berminggu-minggu, sebaiknya bicara dengan psikolog atau psikiater dulu. Di Indonesia, konsultasi ini bisa lewat BPJS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNTUK SIAPA -->
+<section>
+  <div class="wrap">
+    <div class="grid grid-2">
+      <div class="card">
+        <h3 style="margin-bottom:16px;">Cocok kalau</h3>
+        <ul class="fitlist fit-yes">
+          <li>Kamu tahu persis harus ngapain, tapi gak bisa memaksa diri untuk mulai.</li>
+          <li>Kamu sudah coba Pomodoro, to-do list, atau video motivasi, dan semuanya berhenti di minggu pertama.</li>
+          <li>Kamu sering dicap malas, padahal kamu sendiri capek dengan cara kerjamu.</li>
+          <li>Ada janji di kantor dan di rumah yang terus mundur.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:16px;">Bukan untuk kamu kalau</h3>
+        <ul class="fitlist fit-no">
+          <li>Kamu cari hasil instan. Ini program 21 hari, dan hasilnya beda tiap orang.</li>
+          <li>Kamu cari diagnosis atau pengobatan.</li>
+          <li>Kamu cari app untuk memblokir HP. App ini tidak mengunci apa pun, dan yang dilatih adalah kamu.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERBANDINGAN -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:28px;">
+      <h2>Kenapa app ini, bukan cara yang sekarang.</h2>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Video motivasi</th>
+            <th>Buku kebiasaan</th>
+            <th>App to-do atau Pomodoro</th>
+            <th class="hl">Master Self Control</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Dibuat untuk polamu</th><td>Tidak</td><td>Tidak</td><td>Tidak</td><td class="hl">Tes 3 menit, cara kerja ikut polamu</td></tr>
+          <tr><th>Saat tangan mulai ambil HP</th><td>Semangatnya sudah lewat</td><td>Ingat babnya, tapi tetap kabur</td><td>Timer jalan terus, kamu tetap kabur</td><td class="hl">Tombol Aku Lagi Kabur, pilih mulai 5 menit atau istirahat sah</td></tr>
+          <tr><th>Saat gak tahu mulai dari mana</th><td>Disuruh “mulai saja”</td><td>Teori memecah tugas</td><td>Daftar tugas makin panjang</td><td class="hl">Pemecah Tugas, langkah pertama 5 menit</td></tr>
+          <tr><th>Melihat kemajuan</th><td>Pakai perasaan</td><td>Pakai perasaan</td><td>Centang tugas</td><td class="hl">Peta Kabur, angka mingguan, rapor 21 hari</td></tr>
+          <tr><th>Biaya</th><td>Gratis, tapi efeknya sehari</td><td>Sekitar Rp100 ribuan per buku</td><td>Langganan bulanan, sering dalam dolar</td><td class="hl">Sekali bayar, tanpa langganan</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section>
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:28px;">
+      <h2>Cerita dari yang sudah pakai.</h2>
+      <p class="lead" style="margin-top:12px;"><span class="m-only">Geser untuk melihat cerita lainnya. </span>Nomor disensor untuk menjaga privasi.</p>
+    </div>
+    <div class="testi-grid">
+      <img src="img/testi1.webp" alt="Screenshot WhatsApp: setelah timer, menulis 6 halaman dalam 10 menit lalu berani mengirim draf ke atasan, dan atasannya bilang arahnya sudah benar" width="392" height="784" loading="lazy">
+      <img src="img/testi2.webp" alt="Screenshot WhatsApp: dari Peta Kabur ketahuan selalu kabur jam 2 siang, lalu aturan app memindahkan laporan ke pagi dan beres jam 10.30" width="392" height="784" loading="lazy">
+      <img src="img/testi3.webp" alt="Screenshot WhatsApp: presentasi yang dua minggu cuma dibuka, dimulai lewat Pemecah Tugas dengan langkah 5 menit dan lanjut sampai satu jam" width="392" height="784" loading="lazy">
+    </div>
+    <div class="testi-dots" id="testiDots" aria-hidden="true">
+      <button type="button" class="on" data-i="0" aria-label="Testimoni 1"></button>
+      <button type="button" data-i="1" aria-label="Testimoni 2"></button>
+      <button type="button" data-i="2" aria-label="Testimoni 3"></button>
+    </div>
+  </div>
+</section>
+
+<!-- NILAI (NARATIF, TANPA HARGA) -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:24px;">
+      <h2>Berapa yang sudah keluar selama ini?</h2>
+    </div>
+    <div class="story">
+      <p>Coba ingat apa saja yang sudah keluar karena kebiasaan menunda ini. Kopi dan begadang di malam terakhir, kerjaan yang dikembalikan untuk direvisi, buku self-help yang berhenti di bab dua, langganan app produktivitas yang dibuka dua kali, dan janji di rumah yang harus ditebus dengan permintaan maaf.</p>
+      <p>Kelas produktivitas online umumnya ratusan ribu, dan isinya video yang kamu tonton sendirian lalu lupa minggu depannya. App sejenis dari luar negeri berlangganan dalam dolar tiap bulan, berbahasa Inggris, dan tidak membaca polamu.</p>
+      <p class="punch">Master Self Control sekali bayar, tanpa langganan, dan harganya jauh di bawah satu kelas produktivitas. Angkanya ada di halaman berikutnya.</p>
+    </div>
+
+    <div class="price-card">
+      <h3 class="center">Yang kamu dapat begitu masuk</h3>
+      <ul class="incl">
+        <li>Tes Pola Kendali Diri 3 menit, hasil 5 pola, jam rawan, dan rambu kapan perlu ke profesional</li>
+        <li>Peta 21 hari: satu fokus dan satu ceklis tiap hari</li>
+        <li>Mulai 5 menit dengan Ritual Siap Mulai 30 detik</li>
+        <li>Tombol Aku Lagi Kabur dan istirahat sah yang ada batas waktunya</li>
+        <li>Pemecah Tugas untuk kerjaan yang sudah lama ditunda</li>
+        <li>Peta Kabur dan aturan otomatis dari catatanmu sendiri</li>
+        <li>Mode Pemadam dan Rencana Mundur untuk deadline</li>
+        <li>Janji Kantor dan Rumah dengan skor janji tertepati</li>
+        <li>Ritual Senin Pagi, Tutup Hari, Review Mingguan, dan Suara Fokus</li>
+        <li>Tes ulang, Rapor 21 Hari, dan Mode Rawat setelah program selesai</li>
+      </ul>
+      <div class="once-box">
+        <b>Sekali bayar, tanpa langganan.</b>
+        Semua fitur langsung terbuka, tanpa paket basic dan premium.
+      </div>
+      <div class="cta-block center">
+        <a class="btn" href="checkout.html">Mulai Tes 3 Menit →</a>
+        <p class="btn-note">Panduan Akses berisi kode masuk dikirim ke email yang kamu pakai saat order.</p>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h3>Dari bayar sampai tes pertama, tiga langkah.</h3>
+      <ol>
+        <li><b>Selesaikan pembayaran</b>Bisa pakai QRIS, transfer bank, atau e-wallet.</li>
+        <li><b>Buka email, klik link biru</b>Klik link biru yang diawali drive.google.com, bukan tombol “Unduh Produk”. Kalau belum ada di kotak masuk, cek folder Spam atau Promosi.</li>
+        <li><b>Masukkan kode, lalu mulai tes</b>Buka msc-kit.netlify.app, masukkan kode, lalu jawab tes 3 menitnya.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="center" style="margin-bottom:26px;">Pertanyaan yang sering masuk</h2>
+
+      <div class="faq-key">
+        <h3>Aku sudah bayar. Kodenya di mana?</h3>
+        <ol>
+          <li>Buka email pembelianmu.</li>
+          <li>Klik <b>link biru yang diawali drive.google.com</b>.</li>
+          <li>PDF Panduan Akses terbuka. Kodenya ada di dalamnya.</li>
+        </ol>
+      </div>
+
+      <div class="faq-key">
+        <h3>Aku sudah klik &quot;Unduh Produk&quot;, tapi gak ada kodenya.</h3>
+        <p>Tenang, kamu cuma salah klik. Balik ke email yang sama, lalu:</p>
+        <ol>
+          <li>Cari <b>link biru yang diawali drive.google.com</b>. Letaknya di atas tombol Unduh Produk.</li>
+          <li>Klik link itu, bukan tombolnya.</li>
+          <li>Kodenya ada di PDF Panduan Akses yang terbuka.</li>
+        </ol>
+      </div>
+
+      <div class="faq">
+        <details><summary>Kodenya ditolak.</summary><div class="ans">Pastikan kamu membuka msc-kit.netlify.app, lalu ketik atau salin kode dari Panduan Akses apa adanya. Huruf besar kecil dan spasi yang ikut tersalin gak masalah.</div></details>
+        <details><summary>Harganya berapa?</summary><div class="ans">Harganya tertera di halaman pembayaran setelah kamu klik tombol Mulai. Sekali bayar, tanpa biaya bulanan, dan semua fitur langsung terbuka.</div></details>
+        <details><summary>Ini app yang harus di-install?</summary><div class="ans">Tidak. Master Self Control dibuka lewat browser di HP atau laptop. Supaya cepat dibuka, simpan ke layar utama HP seperti app biasa.</div></details>
+        <details><summary>Perlu bikin akun atau password?</summary><div class="ans">Tidak. Cukup satu kode akses.</div></details>
+        <details><summary>Orang kantor bisa lihat catatanku?</summary><div class="ans">Tidak. Catatanmu tersimpan di perangkatmu, bukan di server.</div></details>
+        <details><summary>Kalau ganti HP, progresnya ikut?</summary><div class="ans">Bisa. Ambil kode Pindah Progres dari Pengaturan, masukkan kode akses yang sama di HP baru, lalu tempel kode Pindah Progres tadi.</div></details>
+        <details><summary>Berapa lama sehari?</summary><div class="ans">Mulai dari 5 menit. Kalau mau lanjut, timer bisa diatur 15 atau 25 menit.</div></details>
+        <details><summary>Apa ini tes ADHD?</summary><div class="ans">Bukan. Tes ini membaca pola kebiasaan menunda, bukan mendiagnosis. Kalau kamu curiga ada yang lebih dari kebiasaan, rambu di dalam tes memberi tahu kapan sebaiknya ke psikolog atau psikiater.</div></details>
+        <details><summary>Gimana kalau aku berhenti di tengah jalan?</summary><div class="ans">Lanjutkan saja. App melanjutkan dari hari terakhirmu, bukan dari Hari 1. Bolong itu bagian dari program, bukan tanda gagal.</div></details>
+        <details><summary>Setelah 21 hari selesai, terus gimana?</summary><div class="ans">Pilih Mode Rawat, satu kartu ritual ringan per minggu dengan semua fitur tetap jalan. Atau ulang 21 hari, dan riwayatmu tetap tersimpan.</div></details>
+        <details><summary>Ada biaya bulanan?</summary><div class="ans">Tidak ada.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="sec-deep">
+  <div class="wrap">
+    <div class="narrow center">
+      <h2>Hari ini cukup mulai dari satu tes, 3 menit.</h2>
+      <p class="lead" style="margin-top:20px;">Kamu sudah coba pasang alarm, bikin to-do list, nonton video motivasi, dan berjanji ke diri sendiri tiap Minggu malam. Satu hal yang belum pernah kamu coba: sistem yang tahu di titik mana kamu biasa kalah.</p>
+      <p class="closing-line">Hari pertamamu cuma satu tes.</p>
+      <div class="cta-block">
+        <a class="btn" href="checkout.html">Mulai Tes 3 Menit →</a>
+        <p class="btn-note">Dibuka dari browser HP atau laptop. Tanpa install, tanpa akun.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="logo" href="index.html">Master Self <em>Control</em></a>
+    <small>© 2026 Master Self Control. Semua hak dilindungi.</small>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="sp">
+    <b>Tes pola 3 menit</b>
+    <small>Buka dari HP, tanpa install</small>
+  </div>
+  <a class="btn" href="checkout.html">Mulai</a>
+</div>
+
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Tampilan app diperbesar">
+  <button type="button" class="lb-close" id="lbClose" aria-label="Tutup gambar">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9M14.5 5.5l-9 9" stroke="#1B2433" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="lb-inner"><img id="lbImg" src="" alt=""></div>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('stickyCta');
+  var hero=document.querySelector('.hero');
+  if(!bar||!hero)return;
+  document.body.classList.add('has-sticky');
+  function check(){bar.classList.toggle('on',hero.getBoundingClientRect().bottom<0);}
+  check();
+  window.addEventListener('scroll',check,{passive:true});
+  window.addEventListener('resize',check);
+})();
+
+/* geser + titik untuk testimoni dan alat (HP) */
+function scroller(trackSel,itemSel,dotsId){
+  var track=document.querySelector(trackSel),dots=document.getElementById(dotsId);
+  if(!track||!dots)return;
+  var slides=track.querySelectorAll(itemSel),btns=dots.querySelectorAll('button');
+  function active(){
+    var mid=track.scrollLeft+track.clientWidth/2,best=0,min=Infinity;
+    for(var i=0;i<slides.length;i++){
+      var c=slides[i].offsetLeft+slides[i].offsetWidth/2,d=Math.abs(c-mid);
+      if(d<min){min=d;best=i;}
+    }
+    for(var j=0;j<btns.length;j++)btns[j].classList.toggle('on',j===best);
+  }
+  var t;
+  track.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(active,60);},{passive:true});
+  for(var k=0;k<btns.length;k++){
+    btns[k].addEventListener('click',function(){
+      var el=slides[Number(this.getAttribute('data-i'))];
+      if(!el)return;
+      track.scrollTo({left:el.offsetLeft-(track.clientWidth-el.offsetWidth)/2,behavior:'smooth'});
+    });
+  }
+  active();
+}
+scroller('.testi-grid','img','testiDots');
+scroller('#alatTrack','.alat-item','alatDots');
+
+/* tab alat (desktop) */
+(function(){
+  var tabs=document.querySelectorAll('.alat-tabs [role="tab"]');
+  function pick(tab){
+    for(var i=0;i<tabs.length;i++){
+      var on=tabs[i]===tab;
+      tabs[i].setAttribute('aria-selected',on?'true':'false');
+      tabs[i].setAttribute('tabindex',on?'0':'-1');
+      document.getElementById(tabs[i].getAttribute('aria-controls')).classList.toggle('on',on);
+    }
+  }
+  for(var i=0;i<tabs.length;i++){
+    tabs[i].addEventListener('click',function(){pick(this);});
+    tabs[i].addEventListener('keydown',function(e){
+      var idx=Array.prototype.indexOf.call(tabs,this),n=null;
+      if(e.key==='ArrowRight')n=tabs[(idx+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(idx-1+tabs.length)%tabs.length];
+      if(n){e.preventDefault();pick(n);n.focus();}
+    });
+  }
+})();
+
+/* lightbox: membuka versi gambar yang sedang tampil (HP atau desktop) */
+(function(){
+  var lb=document.getElementById('lightbox'),img=document.getElementById('lbImg'),close=document.getElementById('lbClose');
+  var last=null;
+  function open(src,alt){
+    img.src=src;img.alt=alt||'';
+    lb.classList.add('on');document.body.style.overflow='hidden';close.focus();
+  }
+  function shut(){lb.classList.remove('on');img.src='';document.body.style.overflow='';if(last)last.focus();}
+  var zs=document.querySelectorAll('[data-zoom]');
+  for(var i=0;i<zs.length;i++){
+    zs[i].setAttribute('tabindex','0');
+    zs[i].setAttribute('role','button');
+    zs[i].addEventListener('click',function(){last=this;open(this.currentSrc||this.src,this.alt);});
+    zs[i].addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}});
+  }
+  close.addEventListener('click',shut);
+  lb.addEventListener('click',function(e){if(e.target===lb)shut();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))shut();});
+})();
+</script>
+</body>
+</html>
