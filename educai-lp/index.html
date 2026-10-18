@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EducAI | Latihan AI dari Nol di HP, 15 Menit Sehari selama 28 Hari</title>
+<meta name="description" content="Latihan AI bertahap di HP untuk kamu yang mulai dari nol. 15 menit sehari, 28 hari, satu karya nyata tiap latihan. Dibuka dari browser, tanpa install.">
+<meta property="og:title" content="EducAI | Lowongan Nanya Umur. AI Nggak.">
+<meta property="og:description" content="Latihan AI bertahap di HP untuk kamu yang mulai dari nol. 15 menit sehari, 28 hari, satu karya nyata tiap latihan. Dibuka dari browser, tanpa install.">
+<meta name="theme-color" content="#0F3D2A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pri:#0F3D2A;
+  --pri-mid:#15803D;
+  --pri-soft:#DCFCE7;
+  --pri-deep:#0A2E1F;
+  --madu:#F59E0B;
+  --madu-soft:#FEF3C7;
+  --madu-text:#92400E;
+  --bara:#C2563A;
+  --bara-soft:#FBEAE4;
+  --bg:#F7F5F0;
+  --pasir:#EEEAE2;
+  --card:#FFFFFF;
+  --line:#DED8CD;
+  --line-soft:#EAE5DC;
+  --ink:#1F2937;
+  --muted:#4B5563;
+  --muted-light:#7C8594;
+  --sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --radius:14px;
+  --radius-lg:20px;
+  --sinyal:#16A34A;
+  --sinyal-deep:#12803B;
+  --maxw:1120px;
+  --maxw-text:680px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden;}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;}
+h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-0.02em;color:var(--pri);font-family:var(--sans);}
+h1{font-size:clamp(31px,5.8vw,50px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;}
+h2{font-size:clamp(25px,4.2vw,36px);font-weight:800;}
+h3{font-size:clamp(20px,2.6vw,24px);font-weight:700;}
+h4{font-size:17px;font-weight:700;}
+p{margin:0 0 1rem;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:700;color:var(--pri);}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+.narrow{max-width:var(--maxw-text);margin-left:auto;margin-right:auto;}
+section{padding:56px 0;}
+@media(min-width:768px){section{padding:76px 0;}}
+.sec-alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.sec-deep{background:var(--pri-deep);color:#fff;}
+.sec-deep h2,.sec-deep h3{color:#fff;}
+.eyebrow{font-size:13.5px;font-weight:700;color:var(--pri-mid);margin:0 0 10px;}
+.eyebrow-bara{color:var(--bara);}
+.eyebrow-madu{color:var(--madu-text);}
+.lead{font-size:clamp(17px,2vw,19px);color:var(--muted);}
+.sec-deep .lead{color:#C9E4D3;}
+.center{text-align:center;}
+
+/* header */
+.site-head{background:var(--card);border-bottom:1px solid var(--line);padding:14px 0;position:relative;z-index:5;}
+.logo{display:inline-block;font-family:var(--sans);font-size:20px;font-weight:800;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;line-height:1.2;}
+.logo em{font-style:normal;color:var(--sinyal);}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--sinyal);color:#fff;text-decoration:none;
+  font-weight:800;font-size:17px;letter-spacing:-0.01em;
+  padding:17px 28px;border-radius:12px;border:none;cursor:pointer;
+  box-shadow:0 3px 0 var(--sinyal-deep);
+  transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
+  text-align:center;width:100%;
+}
+@media(min-width:560px){.btn{width:auto;font-size:18px;padding:18px 34px;}}
+.btn:hover{background:#15803D;transform:translateY(-1px);box-shadow:0 4px 0 var(--sinyal-deep);}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--sinyal-deep);}
+.btn:focus-visible{outline:3px solid var(--pri-mid);outline-offset:3px;}
+.sec-deep .btn{background:var(--sinyal);color:#fff;box-shadow:0 3px 0 #051A11;}
+.sec-deep .btn:hover{background:#15803D;}
+.btn-note{font-size:14.5px;color:var(--muted);margin-top:12px;}
+.sec-deep .btn-note{color:#9CC7AE;}
+.cta-block{margin-top:26px;}
+
+/* hero */
+.hero{background:var(--card);padding:28px 0 44px;border-bottom:1px solid var(--line);}
+.hero-grid{display:block;}
+.hero-img{margin:22px -20px 24px;}
+@media(min-width:900px){
+  .hero{padding:64px 0 72px;}
+  .hero-grid{display:grid;grid-template-columns:1fr 460px;grid-template-areas:"hd img" "rest img";column-gap:56px;align-items:center;}
+  .hero-hd{grid-area:hd;align-self:end;}
+  .hero-rest{grid-area:rest;align-self:start;padding-top:18px;}
+  .hero-img{grid-area:img;margin:0;align-self:center;}
+  .hero-img img{border-radius:var(--radius-lg);}
+}
+.hero-bullets{list-style:none;padding:0;margin:22px 0 0;}
+.hero-bullets li{position:relative;padding-left:30px;margin-bottom:12px;font-size:16.5px;color:var(--ink);}
+.hero-bullets li::before{content:"";position:absolute;left:0;top:8px;width:16px;height:16px;border-radius:50%;background:var(--pri-soft);border:2px solid var(--pri-mid);}
+.hero-bullets b{color:var(--pri);}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:14.5px;color:var(--muted);font-weight:600;}
+.hero-facts span{white-space:nowrap;}
+
+/* cards */
+.grid{display:grid;gap:18px;}
+@media(min-width:760px){.grid-3{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:640px){.grid-2{grid-template-columns:repeat(2,1fr);}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;}
+.sec-alt .card{background:var(--bg);}
+.card-quote{font-size:20px;font-weight:800;color:var(--bara);margin:0 0 10px;line-height:1.3;letter-spacing:-0.01em;}
+.card p{font-size:16px;color:var(--muted);}
+.card h3{margin-bottom:10px;}
+
+/* termometer */
+.thermo{margin:30px 0 8px;}
+.thermo-bar{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;}
+.thermo-bar span{display:flex;align-items:center;justify-content:center;height:44px;border-radius:8px;font-weight:800;font-size:16px;}
+.thermo-bar span:nth-child(1){background:#2E7D74;color:#fff;}
+.thermo-bar span:nth-child(2){background:#4C9A84;color:#fff;}
+.thermo-bar span:nth-child(3){background:#7DB283;color:#1E3B2C;}
+.thermo-bar span:nth-child(4){background:#B4C46E;color:#3A4318;}
+.thermo-bar span:nth-child(5){background:#E2C054;color:#4A3A0A;}
+.thermo-bar span:nth-child(6){background:#EBA544;color:#4A2C06;}
+.thermo-bar span:nth-child(7){background:#E98A45;color:#4A2208;}
+.thermo-bar span:nth-child(8){background:#E06D4C;color:#fff;}
+.thermo-bar span:nth-child(9){background:#D0533F;color:#fff;}
+.thermo-bar span:nth-child(10){background:#B83C3A;color:#fff;}
+.thermo-lbl{display:grid;grid-template-columns:3fr 3fr 4fr;gap:4px;margin-top:8px;font-size:13.5px;font-weight:700;color:var(--muted);}
+.thermo-lbl span:nth-child(2){text-align:center;}
+.thermo-lbl span:nth-child(3){text-align:right;}
+.thermo-cap{font-size:15px;color:var(--muted);margin-top:12px;}
+@media(max-width:420px){.thermo-bar span{height:38px;font-size:14px;border-radius:6px;}.thermo-bar{gap:3px;}}
+
+.pilar{border-left:4px solid var(--pri-mid);padding:4px 0 4px 18px;margin-bottom:20px;}
+.pilar.p-anak{border-color:#7DB283;}
+.pilar.p-ortu{border-color:var(--madu);}
+.pilar.p-darurat{border-color:var(--bara);}
+.pilar h4{margin-bottom:4px;color:var(--pri);}
+.pilar p{font-size:16px;color:var(--muted);margin:0;}
+.pilar p b{color:var(--pri);}
+.golden{margin-top:28px;font-size:25px;font-weight:800;color:var(--pri);margin-bottom:6px;line-height:1.3;letter-spacing:-0.02em;}
+
+/* steps */
+.step{display:grid;gap:20px;padding:28px 0;border-top:1px solid var(--line);}
+.narrow + .step{border-top:none;}
+@media(min-width:1024px){
+  .step.dimg{grid-template-columns:1fr 1.45fr;gap:48px;align-items:center;}
+  .step-img{order:2;}
+}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--pri-mid);color:#fff;font-weight:800;font-size:16px;margin-bottom:12px;}
+.step-copy p{color:var(--muted);margin-top:10px;}
+.step-wide{display:block;}
+.step-wide .step-copy{max-width:var(--maxw-text);}
+
+/* screenshot frames */
+.shot{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:0 1px 3px rgba(15,61,42,.08);}
+.shot-r{max-width:300px;width:100%;margin-left:auto;margin-right:auto;}
+@media(min-width:1024px){.shot-r{max-width:100%;}}
+[data-zoom]{cursor:zoom-in;}
+.m-only{display:inline;}
+@media(min-width:700px){.m-only{display:none;}}
+figure{margin:0;}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;text-align:center;}
+
+/* feature rows */
+.feat{display:grid;gap:24px;padding:40px 0;border-top:1px solid var(--line);}
+@media(min-width:1024px){
+  .feat.dimg{grid-template-columns:1fr 1.45fr;gap:48px;align-items:center;}
+  .feat.dimg.flip{grid-template-columns:1.45fr 1fr;}
+  .feat-img{order:2;}
+  .feat.flip .feat-img{order:1;}
+  .feat.flip .feat-copy{order:2;}
+}
+.feat-copy h3{margin-bottom:12px;}
+.feat-copy p{color:var(--muted);font-size:16.5px;}
+.feat-pair{padding-top:40px;border-top:1px solid var(--line);}
+
+/* alat */
+.alat-tabs{display:none;}
+.alat-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 20px 6px;margin:0 -20px;}
+.alat-track::-webkit-scrollbar{display:none;}
+.alat-item{flex:0 0 80%;scroll-snap-align:center;}
+.alat-item h3{font-size:19px;margin:16px 0 6px;}
+.alat-item p{font-size:15.5px;color:var(--muted);margin:0;}
+.alat-dots{display:flex;justify-content:center;gap:8px;margin-top:18px;}
+.alat-dots button,.testi-dots button{width:8px;height:8px;padding:0;border:none;border-radius:50%;background:var(--line);cursor:pointer;transition:background .2s ease,width .2s ease;}
+.alat-dots button.on,.testi-dots button.on{background:var(--pri-mid);width:22px;border-radius:5px;}
+.alat-dots button:focus-visible,.testi-dots button:focus-visible{outline:2px solid var(--pri-mid);outline-offset:3px;}
+@media(min-width:1024px){
+  .alat-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:26px;flex-wrap:wrap;}
+  .alat-tabs button{font:inherit;font-size:15.5px;font-weight:700;color:var(--pri);background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:10px 20px;cursor:pointer;}
+  .alat-tabs button[aria-selected="true"]{background:var(--pri-mid);border-color:var(--pri-mid);color:#fff;}
+  .alat-tabs button:focus-visible{outline:3px solid var(--madu);outline-offset:2px;}
+  .alat-track{display:block;overflow:visible;padding:0;margin:0;}
+  .alat-item{display:none;}
+  .alat-item.on{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:center;}
+  .alat-item h3{font-size:24px;margin:0 0 10px;}
+  .alat-item p{font-size:16.5px;}
+  .alat-dots{display:none;}
+}
+.also{max-width:var(--maxw-text);margin:34px auto 0;text-align:center;font-size:16px;color:var(--muted);}
+
+/* jelas */
+.clear-card p{color:var(--muted);font-size:16.5px;}
+.clear-yes{border-top:4px solid var(--pri-mid);}
+.clear-no{border-top:4px solid var(--madu);}
+
+.fitlist{list-style:none;padding:0;margin:0;}
+.fitlist li{position:relative;padding-left:30px;margin-bottom:13px;font-size:16.5px;}
+.fitlist li::before{position:absolute;left:0;top:0;font-weight:800;font-size:17px;}
+.fit-yes li::before{content:"✓";color:var(--pri-mid);}
+.fit-no li::before{content:"✕";color:var(--bara);}
+
+/* table */
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;border:1px solid var(--line);border-radius:var(--radius);}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15.5px;background:var(--card);}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:none;}
+thead th{font-size:13.5px;font-weight:700;color:var(--muted);border-bottom:2px solid var(--line);}
+thead th.hl{color:var(--pri);}
+tbody td.hl{font-weight:700;color:var(--pri);background:var(--pri-soft);}
+tbody th{font-weight:600;color:var(--ink);width:19%;}
+
+/* testimoni */
+.testi-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 20px 6px;margin:0 -20px;}
+.testi-grid::-webkit-scrollbar{display:none;}
+.testi-grid img{flex:0 0 78%;scroll-snap-align:center;width:100%;height:auto;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 1px 3px rgba(15,61,42,.08);}
+.testi-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+@media(min-width:700px){
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;overflow:visible;padding:0;margin:0;}
+  .testi-grid img{flex:none;}
+  .testi-dots{display:none;}
+}
+
+/* nilai (naratif) */
+.story{max-width:var(--maxw-text);margin:0 auto 34px;}
+.story p{font-size:clamp(17px,2vw,18.5px);color:var(--muted);}
+.story p.punch{font-size:clamp(19px,2.4vw,22px);font-weight:700;color:var(--pri);line-height:1.45;margin-top:22px;}
+.price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 22px;max-width:620px;margin:0 auto;}
+.sec-alt .price-card{background:var(--bg);}
+@media(min-width:640px){.price-card{padding:36px;}}
+.incl{list-style:none;padding:0;margin:18px 0 0;}
+.incl li{position:relative;padding:10px 0 10px 30px;border-bottom:1px solid var(--line-soft);font-size:16px;}
+.incl li:last-child{border-bottom:none;}
+.incl li::before{content:"✓";position:absolute;left:0;top:10px;font-weight:800;color:var(--pri-mid);}
+.once-box{text-align:center;background:var(--madu-soft);border-radius:var(--radius);padding:18px 20px;margin:24px 0 0;font-size:16.5px;color:var(--ink);}
+.once-box b{display:block;font-size:19px;color:var(--pri);margin-bottom:2px;}
+
+.flow{max-width:620px;margin:40px auto 0;}
+.flow h3{text-align:center;margin-bottom:18px;font-size:clamp(19px,2.4vw,22px);}
+.flow ol{list-style:none;padding:0;margin:0;counter-reset:f;}
+.flow li{counter-increment:f;position:relative;padding:0 0 18px 48px;font-size:16px;color:var(--muted);}
+.flow li:last-child{padding-bottom:0;}
+.flow li::before{content:counter(f);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--pri-soft);color:var(--pri);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.flow li b{display:block;color:var(--pri);font-size:16.5px;}
+
+/* faq */
+.faq-key{background:var(--card);border:3px solid var(--madu);border-radius:var(--radius);padding:22px;margin-bottom:16px;}
+.faq-key h3{font-size:clamp(20px,3.2vw,23px);margin-bottom:12px;}
+.faq-key p{font-size:17.5px;color:var(--muted);margin:0 0 10px;}
+.faq-key ol{margin:0;padding:0 0 0 24px;font-size:clamp(17.5px,2.6vw,19px);line-height:1.5;}
+.faq-key li{margin-bottom:10px;padding-left:4px;}
+.faq-key li:last-child{margin-bottom:0;}
+.faq-key li::marker{font-weight:800;color:var(--madu-text);}
+.faq-key b{color:var(--pri);}
+.faq{border-top:1px solid var(--line);margin-top:30px;}
+.faq details{border-bottom:1px solid var(--line);}
+.faq summary{cursor:pointer;padding:18px 34px 18px 0;position:relative;font-weight:700;font-size:16.5px;color:var(--pri);list-style:none;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"";position:absolute;right:6px;top:26px;width:9px;height:9px;border-right:2.5px solid var(--pri-mid);border-bottom:2.5px solid var(--pri-mid);transform:rotate(45deg);transition:transform .18s ease;}
+.faq details[open] summary::after{transform:rotate(-135deg);top:28px;}
+.faq summary:focus-visible{outline:2px solid var(--pri-mid);outline-offset:2px;}
+.faq .ans{padding:0 0 20px;color:var(--muted);font-size:16.5px;}
+
+.closing-line{font-size:25px;font-weight:800;color:#fff;margin-top:24px;line-height:1.3;letter-spacing:-0.02em;}
+
+/* sticky bar */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);padding:10px 16px;box-shadow:0 -3px 14px rgba(15,61,42,.12);display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s ease;}
+.sticky-cta.on{transform:translateY(0);}
+.sticky-cta .sp{flex:1;min-width:0;}
+.sticky-cta .sp b{display:block;font-size:16.5px;color:var(--pri);line-height:1.2;}
+.sticky-cta .sp small{font-size:12.5px;color:var(--muted);}
+.sticky-cta .btn{width:auto;padding:14px 22px;font-size:15.5px;flex-shrink:0;}
+@media(min-width:900px){.sticky-cta{display:none;}}
+body.has-sticky{padding-bottom:82px;}
+@media(min-width:900px){body.has-sticky{padding-bottom:0;}}
+
+/* footer */
+.site-foot{background:var(--card);border-top:1px solid var(--line);padding:30px 0;text-align:center;}
+.site-foot .logo{display:block;margin-bottom:6px;}
+.site-foot small{font-size:13.5px;color:var(--muted-light);}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(6,24,16,.92);display:none;align-items:center;justify-content:center;padding:56px 12px 20px;}
+.lb.on{display:flex;}
+.lb-inner{max-width:1400px;width:100%;max-height:100%;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:10px;}
+.lb img{width:auto;max-width:100%;max-height:86vh;margin:0 auto;border-radius:10px;}
+.lb-close{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.lb-close:focus-visible{outline:3px solid var(--madu);outline-offset:2px;}
+.lb-close svg{width:18px;height:18px;}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+.eyebrow-sinyal{color:var(--sinyal-deep);}
+.pilar.pl-m1{border-color:#16A34A;}
+.pilar.pl-m2{border-color:#2563EB;}
+.pilar.pl-m3{border-color:#F59E0B;}
+.pilar.pl-m4{border-color:#EF4444;}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="EducAI, halaman utama">Educ<em>AI</em></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-hd">
+        <h1>Bukan kamu yang telat belajar. Lowongannya yang nanya umur. AI nggak.</h1>
+      </div>
+      <div class="hero-img">
+        <img src="img/hero-mockup.webp" alt="EducAI: belajar AI dari nol, cukup 15 menit sehari. 15 menit per hari, 28 hari latihan, karya nyata" width="980" height="1232" fetchpriority="high">
+      </div>
+      <div class="hero-rest">
+        <p class="lead">EducAI adalah latihan AI bertahap di HP, kayak belajar bahasa tapi buat AI. Satu latihan 15 menit sehari selama 28 hari, mulai dari nol. Setiap latihan menghasilkan satu karya nyata: caption, poster, menu, hitungan HPP, laporan, atau balasan chat pelanggan.</p>
+        <ul class="hero-bullets">
+          <li><b>"Aku gaptek."</b> App-nya menyusun perintah buat kamu. Tugasmu cuma isi kolom, salin, tempel.</li>
+          <li><b>"Gak punya laptop."</b> Semua latihan dibuat untuk HP. Malas ngetik? Pakai mikrofon di keyboard.</li>
+          <li><b>"Takut ujung-ujungnya langganan."</b> Pakai ChatGPT atau Gemini versi gratis, plus 6 alat siap pakai di dalam app.</li>
+        </ul>
+        <div class="cta-block">
+          <a class="btn" href="checkout.html">Mulai Tes 2 Menit →</a>
+          <p class="btn-note">Dibuka dari browser HP atau laptop. Tanpa install, tanpa akun.</p>
+        </div>
+        <div class="hero-facts">
+          <span>15 menit sehari</span>
+          <span>28 hari latihan</span>
+          <span>1 karya tiap latihan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADEGAN -->
+<section>
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:34px;">
+      <h2>Baca tiga ini. Kalau ada satu yang kejadian minggu ini, kamu di tempat yang benar.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <p class="card-quote">“Maksimal usia 35 tahun.”</p>
+        <p>Kamu buka lowongan di grup WA, lalu satu lagi, lalu satu lagi. Pengalamanmu 15 tahun, badan masih kuat, tapi baris itu yang selalu menutup pintu. HP-nya kamu taruh, lalu kamu diam lama di teras.</p>
+      </div>
+      <div class="card">
+        <p class="card-quote">“Udah narik dari subuh, kok masih kurang?”</p>
+        <p>Akhir bulan kontrakan, uang sekolah anak, dan cicilan datang bareng. Jam kerja sudah ditambah, tapi angkanya tetap gak nutup. Yang ditawarkan ke kamu selalu kerja fisik berikutnya.</p>
+      </div>
+      <div class="card">
+        <p class="card-quote">“Semua orang bilang belajar AI.”</p>
+        <p>Kamu sudah buka video tutorial, tapi isinya istilah Inggris, durasinya satu jam, dan disuruh pakai laptop. Lima menit kemudian kamu tutup lagi. Bingung mulai dari mana.</p>
+      </div>
+    </div>
+    <p class="narrow lead center" style="margin-top:30px;">Tiga adegan ini kelihatan beda. Akarnya sama, dan bukan karena kamu malas atau bodoh. Kamu cuma belum pernah dikasih jalur latihan yang pendek, berbahasa sehari-hari, dan bisa jalan dari HP setelah pulang kerja.</p>
+  </div>
+</section>
+
+<!-- MEKANISME -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow">
+      <h2>Pengalaman kerjamu itu modal. Yang belum ada cuma alatnya.</h2>
+      <p style="margin-top:18px;">Belasan tahun di pabrik, dapur, gudang, atau jalanan membuat kamu paham masalah orang: menu warung yang ditulis tangan, harga servis yang gak tertulis, stok yang berantakan. Yang biasanya belum kamu punya adalah cara menyuruh AI mengerjakannya. EducAI melatih itu bertahap, satu langkah sehari, dalam empat minggu:</p>
+
+      <div style="margin-top:26px;">
+        <div class="pilar pl-m1"><h4>Minggu 1 · Ngobrol dengan AI</h4><p>Cara memberi perintah yang jelas, memberi contoh, minta revisi, dan memeriksa hasil. Targetnya caption promo pertamamu jadi.</p></div>
+        <div class="pilar pl-m2"><h4>Minggu 2 · Bikin Konten</h4><p>Poster, menu, dan promo dari foto HP sendiri. Targetnya satu paket promo untuk usaha tetangga atau usahamu.</p></div>
+        <div class="pilar pl-m3"><h4>Minggu 3 · Kerja Nyata</h4><p>Hitungan HPP, tabel, laporan, dan balasan pelanggan. Targetnya 5 karya masuk portofolio.</p></div>
+        <div class="pilar pl-m4"><h4>Minggu 4 · Jual atau Terapkan</h4><p>Hasil latihan dipakai di dunia nyata.</p></div>
+      </div>
+
+      <p style="margin-top:26px;">Hari 1 sampai 14 sama untuk semua orang. Hari 15 sampai 28 mengikuti jalurmu: <b>Jasa Konten</b> (jual jasa ke UMKM sekitar), <b>Usaha</b> (bantu usaha sendiri), atau <b>Kantor</b> (naik kelas di kerjaan). Contoh di setiap latihan menyesuaikan pekerjaanmu.</p>
+
+      <p class="golden">Targetnya bukan jago AI. Targetnya satu karya nyata setiap hari.</p>
+      <p style="color:var(--muted);">Aturan yang dijaga app: satu latihan baru per hari. Kalau tertinggal, boleh dua. Bolos gak menghapus progres, dan gak ada tulisan "kamu gagal". Kamu tinggal lanjut.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARA KERJA -->
+<section>
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:10px;">
+      <h2>Kamu gak perlu tahu harus mulai dari mana. App-nya yang nuntun.</h2>
+    </div>
+
+    <div class="step step-wide">
+      <div class="step-copy">
+        <div class="step-num">1</div>
+        <h3>Masuk pakai email dan Nomor Order</h3>
+        <p>Keduanya ada di email pembelianmu. Gak perlu bikin akun atau password.</p>
+      </div>
+    </div>
+
+    <div class="step dimg">
+      <div class="step-copy">
+        <div class="step-num">2</div>
+        <h3>Jawab 6 pertanyaan, sekitar 2 menit</h3>
+        <p>Usia, pekerjaan, pernah pakai AI atau belum, jam luang, tujuan, dan aplikasi AI di HP-mu. Hasilnya jalur latihan, jam latihan yang pas, 3 hal yang sudah kamu pahami dari pengalaman kerjamu, dan langkah pasang ChatGPT atau Gemini kalau belum ada.</p>
+      </div>
+      <div class="step-img">
+        <picture><source media="(min-width:1024px)" srcset="img/hasil-tes-d.webp" width="1400" height="868"><img class="shot shot-r" data-zoom src="img/hasil-tes.webp" alt="Layar hasil Tes Titik Mulai: Jalur Jasa Konten, waktu latihan yang pas setelah makan, dan hal yang sudah dipahami dari pengalaman kerja" width="728" height="1568" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="step step-wide">
+      <div class="step-copy">
+        <div class="step-num">3</div>
+        <h3>Mulai Hari 1</h3>
+        <p>Belum pernah pakai AI sama sekali justru pas, karena hari pertama dimulai dari ketikan pertama.</p>
+      </div>
+    </div>
+
+    <div class="cta-block narrow center" style="margin-top:34px;">
+      <a class="btn" href="checkout.html">Mulai Tes 2 Menit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FITUR -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow center">
+      <h2>Yang kamu pakai tiap hari</h2>
+    </div>
+
+    <div class="feat dimg" style="border-top:none;">
+      <div class="feat-copy">
+        <p class="eyebrow eyebrow-sinyal">Latihan 15 Menit</p>
+        <h3>Habis makan malam, di meja dapur, satu tombol: Mulai Latihan.</h3>
+        <p style="margin-top:12px;">Timernya dibagi tiga bagian. 2 menit <b>Paham</b>: kartu konsep singkat, misalnya beda perintah lemah dan perintah jelas. 10 menit <b>Praktik</b>: kamu isi beberapa kolom, app merakit perintahnya, lalu kamu tap Salin perintah dan Buka ChatGPT atau Buka Gemini.</p>
+        <p>Hasil dari AI kamu tempel balik dan periksa dengan ceklis, misalnya "Nama usaha benar? Ada harga? Gak lebay?". Kalau belum pas, ada perintah revisi siap salin. 3 menit terakhir <b>Simpan</b>: kasih judul dan nilai sendiri. Timernya cuma pengingat dan gak mengunci. Keluar di tengah jalan juga aman karena isianmu tersimpan sebagai draf.</p>
+      </div>
+      <div class="feat-img">
+        <picture><source media="(min-width:1024px)" srcset="img/latihan-d.webp" width="1400" height="868"><img class="shot shot-r" data-zoom src="img/latihan.webp" alt="Layar latihan bagian Praktik: timer Paham, Praktik, Simpan, tugas hari ini, dan kolom isian yang dirakit jadi perintah" width="728" height="1568" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="feat dimg flip">
+      <div class="feat-copy">
+        <p class="eyebrow">Peta 28 Hari</p>
+        <h3>Tahu kamu di mana dari lingkaran hijau, bukan dari perasaan.</h3>
+        <p style="margin-top:12px;">Empat minggu, 28 lingkaran. Hijau berarti selesai, berbingkai berarti hari ini, abu-abu belum terbuka. Target tiap minggu tertulis di atasnya. Tap hari yang sudah selesai untuk melihat karyanya.</p>
+        <p>Lembur empat hari? App bilang "Kamu tertinggal, tidak apa-apa, hari ini boleh dua latihan." Minggu yang sudah lewat bisa diulang tanpa menghapus hasil lama.</p>
+      </div>
+      <div class="feat-img">
+        <picture><source media="(min-width:1024px)" srcset="img/peta-d.webp" width="1400" height="868"><img class="shot shot-r" data-zoom src="img/peta.webp" alt="Layar Peta 28 Hari: Minggu 1 Ngobrol dengan AI dengan target caption promo pertama tercapai dan lingkaran hari yang sudah selesai" width="728" height="1568" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="feat dimg">
+      <div class="feat-copy">
+        <p class="eyebrow eyebrow-madu">Karya, Portofolio, dan Kit Klien Pertama</p>
+        <h3>Mau nawarin jasa tapi gak punya contoh? Contohnya kamu bikin sendiri tiap hari.</h3>
+        <p style="margin-top:12px;">Semua hasil latihan dan Studio tersimpan di Karya. Yang kamu tandai bagus bisa jadi gambar portofolio, yaitu satu sampul plus sampai 6 karya, siap dikirim ke calon klien lewat WhatsApp.</p>
+        <p>Kit Klien Pertama berisi ide calon klien di sekitar rumah (warung makan, warung kopi, toko kelontong, salon, laundry, bengkel), daftar 10 calon klien, pesan penawaran siap salin, paket harga Hemat, Pas, dan Lengkap, serta jawaban untuk "Berapa?" sampai "Kok murah?".</p>
+      </div>
+      <div class="feat-img">
+        <picture><source media="(min-width:1024px)" srcset="img/portofolio-d.webp" width="1400" height="868"><img class="shot shot-r" data-zoom src="img/portofolio.webp" alt="Layar Portofolio: profil singkat dan 5 karya di portofolio seperti caption, poster, dan menu, dengan tombol Buat gambar portofolio" width="728" height="1568" loading="lazy"></picture>
+      </div>
+    </div>
+
+    <div class="feat-pair">
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Karyamu milikmu.</h3>
+          <p>Tanpa akun dan password. Latihan, karya, dan foto tersimpan di HP-mu saja, dan kami gak bisa membacanya.</p>
+        </div>
+        <div class="card">
+          <h3>HP Android, iPhone, atau laptop.</h3>
+          <p>Cukup browser. Ganti HP? Pindahkan progres dengan satu kode Pindah Progres.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALAT -->
+<section>
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:30px;">
+      <h2>6 alat siap pakai, bebas dipakai kapan saja.</h2>
+      <p class="lead" style="margin-top:12px;">Semuanya ada di menu Studio, tanpa kuota.<span class="m-only"> Geser untuk melihat yang lain.</span></p>
+    </div>
+
+    <div class="alat-tabs" role="tablist" aria-label="Pilih alat">
+      <button type="button" role="tab" id="tab-hpp" aria-controls="alat-hpp" aria-selected="true">Kalkulator HPP</button>
+      <button type="button" role="tab" id="tab-poster" aria-controls="alat-poster" aria-selected="false" tabindex="-1">Poster &amp; Menu dari Foto</button>
+      <button type="button" role="tab" id="tab-caption" aria-controls="alat-caption" aria-selected="false" tabindex="-1">Penulis Caption</button>
+    </div>
+
+    <div class="alat-track" id="alatTrack">
+      <div class="alat-item on" id="alat-hpp" role="tabpanel" aria-labelledby="tab-hpp">
+        <picture><source media="(min-width:1024px)" srcset="img/hpp-d.webp" width="1400" height="868"><img class="shot" data-zoom src="img/hpp.webp" alt="Layar Kalkulator HPP dan Harga Jual: nama produk Bakso Jumbo, jumlah porsi, dan daftar bahan dengan harga beli" width="728" height="1568" loading="lazy"></picture>
+        <div>
+          <h3>Kalkulator HPP &amp; Harga Jual</h3>
+          <p>Masukkan bahan, harga beli, dan jumlah porsi. Keluar modal per porsi dan saran harga jual dengan margin 30, 40, atau 50 persen. Sering ketahuan ternyata selama ini jualnya hampir sama dengan modal.</p>
+        </div>
+      </div>
+      <div class="alat-item" id="alat-poster" role="tabpanel" aria-labelledby="tab-poster">
+        <picture><source media="(min-width:1024px)" srcset="img/poster-d.webp" width="1400" height="868"><img class="shot" data-zoom src="img/poster.webp" alt="Layar Poster dan Menu dari Foto: poster Nasi Uduk Komplit dari foto HP dengan harga, tombol Unduh gambar dan Bagikan" width="728" height="1568" loading="lazy"></picture>
+        <div>
+          <h3>Poster &amp; Menu dari Foto</h3>
+          <p>Pilih foto dari galeri, pilih template, isi judul dan harga. Jadi gambar poster atau daftar harga siap unduh atau dibagikan.</p>
+        </div>
+      </div>
+      <div class="alat-item" id="alat-caption" role="tabpanel" aria-labelledby="tab-caption">
+        <picture><source media="(min-width:1024px)" srcset="img/caption-d.webp" width="1400" height="868"><img class="shot" data-zoom src="img/caption.webp" alt="Layar Penulis Caption dan Promo: pilihan jenis usaha, nama usaha, produk, harga, dan promo" width="728" height="1568" loading="lazy"></picture>
+        <div>
+          <h3>Penulis Caption &amp; Promo</h3>
+          <p>Isi nama usaha, produk, harga, dan promo. Keluar 3 pilihan caption yang bisa dibuat lebih singkat, santai, atau menjual.</p>
+        </div>
+      </div>
+    </div>
+    <div class="alat-dots" id="alatDots" aria-hidden="true">
+      <button type="button" class="on" data-i="0" aria-label="Alat 1"></button>
+      <button type="button" data-i="1" aria-label="Alat 2"></button>
+      <button type="button" data-i="2" aria-label="Alat 3"></button>
+    </div>
+
+    <p class="also">Juga ada Perapi Tabel &amp; Laporan untuk laporan penjualan, stok, dan jadwal produksi, Balas Chat Pelanggan untuk pertanyaan harga sampai komplain telat, dan Ringkas Dokumen yang merakit perintah ringkas untuk ChatGPT atau Gemini. Ketiga alat utama di atas langsung jadi di dalam app.</p>
+  </div>
+</section>
+
+<!-- SUPAYA JELAS -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:28px;">
+      <h2>Supaya jelas dari awal</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card clear-card clear-yes">
+        <h3>EducAI bisa</h3>
+        <p>melatih kamu memakai AI dari nol, 15 menit sehari selama 28 hari, menyiapkan perintah AI yang bagus, memberi 6 alat siap pakai, menyimpan karyamu dan merapikannya jadi portofolio, serta membekali cara mencari calon klien dan menghitung harga jasa.</p>
+      </div>
+      <div class="card clear-card clear-no">
+        <h3>EducAI bukan</h3>
+        <p>jaminan pasti dapat uang, klien, atau pekerjaan. Hasilnya tergantung latihan dan seberapa rajin kamu menawarkan jasa atau menerapkannya di kerjaan. EducAI juga bukan AI sendiri: untuk bagian tertentu kamu memakai ChatGPT atau Gemini versi gratis milik perusahaan lain. Dan ini bukan skema "kerja like dan subscribe" atau "join tim". Penghasilan dari skill AI datang dari klien yang membayar hasil kerjamu, bukan dari setor uang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNTUK SIAPA -->
+<section>
+  <div class="wrap">
+    <div class="grid grid-2">
+      <div class="card">
+        <h3 style="margin-bottom:16px;">Cocok kalau</h3>
+        <ul class="fitlist fit-yes">
+          <li>Kamu 35 tahun ke atas dan sering mentok di syarat umur lowongan.</li>
+          <li>Kamu belum pernah pakai AI, atau baru coba sekali dan bingung lanjutnya.</li>
+          <li>Kamu cuma punya HP dan 15 menit di sela kerja.</li>
+          <li>Kamu mau pengalaman kerjamu jadi karya yang bisa ditawarkan ke warung, katering, atau bengkel sekitar.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:16px;">Bukan untuk kamu kalau</h3>
+        <ul class="fitlist fit-no">
+          <li>Kamu mencari cara cepat kaya dalam seminggu.</li>
+          <li>Kamu sudah mahir AI dan butuh materi teknis seperti coding atau chatbot.</li>
+          <li>Kamu gak mau menyisihkan 15 menit sehari selama 4 minggu.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERBANDINGAN -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:28px;">
+      <h2>Kenapa EducAI, bukan cara yang biasa dicoba.</h2>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Video tutorial gratis</th>
+            <th>Kelas AI online</th>
+            <th>Langganan alat AI</th>
+            <th class="hl">EducAI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Bahasa</th><td>Banyak istilah Inggris</td><td>Campur</td><td>Inggris</td><td class="hl">Bahasa sehari-hari</td></tr>
+          <tr><th>Perangkat</th><td>Sering suruh laptop</td><td>Laptop disarankan</td><td>HP atau laptop</td><td class="hl">Dibuat untuk HP</td></tr>
+          <tr><th>Cara belajar</th><td>Nonton panjang</td><td>Nonton video</td><td>Coba sendiri</td><td class="hl">Latihan 15 menit, langsung praktik</td></tr>
+          <tr><th>Hasil akhir</th><td>Gak ada</td><td>Sertifikat</td><td>Gak ada</td><td class="hl">Portofolio dan Kit Klien Pertama</td></tr>
+          <tr><th>Biaya</th><td>Gratis, tapi sering berhenti di tengah</td><td>Rp150.000 sampai Rp235.000 per kelas</td><td>Sekitar Rp100.000 sampai Rp320.000 per bulan</td><td class="hl">Sekali bayar, tanpa langganan</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section>
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:28px;">
+      <h2>Cerita dari yang sudah pakai.</h2>
+      <p class="lead" style="margin-top:12px;"><span class="m-only">Geser untuk melihat cerita lainnya. </span>Nomor disensor untuk menjaga privasi.</p>
+    </div>
+    <div class="testi-grid">
+      <img src="img/testi1.webp" alt="Screenshot WhatsApp: sempat bolos 4 hari karena lembur, lalu tombol kejar ketinggalan tanpa tulisan kamu gagal membuatnya lanjut, dan istrinya menandai kalender dapur tiap hari latihan" width="392" height="784" loading="lazy">
+      <img src="img/testi2.webp" alt="Screenshot WhatsApp: dari hitungan modal per bolu ketahuan selama ini jualan hampir sama dengan modal, lalu berani naikkan harga dan dapat pesanan nasi box untuk pengajian" width="392" height="784" loading="lazy">
+      <img src="img/testi3.webp" alt="Screenshot WhatsApp: minggu ketiga sudah punya 6 karya, mengirim link ke bengkel dan toko sekitar, lalu satu bengkel minta dibuatkan poster promo servis dan jadi klien pertama" width="392" height="784" loading="lazy">
+    </div>
+    <div class="testi-dots" id="testiDots" aria-hidden="true">
+      <button type="button" class="on" data-i="0" aria-label="Testimoni 1"></button>
+      <button type="button" data-i="1" aria-label="Testimoni 2"></button>
+      <button type="button" data-i="2" aria-label="Testimoni 3"></button>
+    </div>
+  </div>
+</section>
+
+<!-- NILAI (NARATIF, TANPA HARGA) -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="narrow center" style="margin-bottom:24px;">
+      <h2>Berapa yang sudah keluar selama ini?</h2>
+    </div>
+    <div class="story">
+      <p>Hitung saja ongkos yang sudah keluar: bensin bolak-balik ke bursa kerja, fotokopi lamaran, dan kuota buat nonton tutorial yang gak pernah selesai.</p>
+      <p>Kelas AI online dijual Rp150.000 sampai Rp235.000 per kelas, dan isinya video yang kamu tonton sendirian. Langganan alat AI bisa Rp100.000 lebih tiap bulan, berbahasa Inggris, dan gak menuntun dari nol.</p>
+      <p class="punch">EducAI dibayar sekali saja, dan harganya jauh di bawah satu kelas AI online. Angkanya ada di halaman berikutnya.</p>
+    </div>
+
+    <div class="price-card">
+      <h3 class="center">Yang kamu dapat begitu masuk</h3>
+      <ul class="incl">
+        <li>Tes Titik Mulai dan 3 jalur latihan: Jasa Konten, Usaha, Kantor</li>
+        <li>Latihan 15 menit selama 28 hari, satu karya tiap latihan</li>
+        <li>Peta 28 Hari dengan kejar ketinggalan dan ulang minggu</li>
+        <li>Studio 6 alat: caption, poster dan menu dari foto, kalkulator HPP, perapi laporan, balas chat, ringkas dokumen</li>
+        <li>Karya dan gambar portofolio siap kirim lewat WhatsApp</li>
+        <li>Kit Klien Pertama: ide klien, pesan penawaran, paket harga, jawaban siap pakai</li>
+        <li>Catatan Pencapaian dan Evaluasi 28 Hari</li>
+        <li>Pindah Progres untuk ganti HP</li>
+      </ul>
+      <div class="once-box">
+        <b>Sekali bayar, tanpa langganan.</b>
+        Semua fitur langsung terbuka, tanpa paket basic dan premium.
+      </div>
+      <div class="cta-block center">
+        <a class="btn" href="checkout.html">Mulai Tes 2 Menit →</a>
+        <p class="btn-note">Setelah bayar, Nomor Order untuk masuk dikirim ke email yang kamu pakai saat order.</p>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h3>Dari bayar sampai latihan pertama, tiga langkah.</h3>
+      <ol>
+        <li><b>Selesaikan pembayaran</b>Bisa pakai QRIS, transfer bank, atau e-wallet.</li>
+        <li><b>Buka email dari Bookvalley, salin Nomor Order</b>Judulnya "...Link DOWNLOAD EducAI ada di email ini". Salin kode di sebelah tulisan Order number. Walau judulnya menyebut download, gak ada yang perlu diunduh. Belum ada? Cek folder Promosi atau Spam.</li>
+        <li><b>Buka educai-kit.netlify.app, lalu masuk</b>Isi email saat membeli dan Nomor Order, lalu tap Masuk. Akses biasanya aktif 1 sampai 2 menit setelah pembayaran diterima.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <h2 class="center" style="margin-bottom:26px;">Pertanyaan yang sering masuk</h2>
+
+      <div class="faq-key">
+        <h3>Aku sudah bayar. Nomor Order-nya di mana?</h3>
+        <ol>
+          <li>Buka email dari <b>Bookvalley</b> yang judulnya "...Link DOWNLOAD EducAI ada di email ini".</li>
+          <li>Cari tulisan <b>Order number</b>. Kode di sebelahnya itulah Nomor Order kamu, bentuknya 6 angka lalu huruf kapital, misalnya 261018KMWRDTA.</li>
+          <li>Buka educai-kit.netlify.app, isi email saat membeli dan Nomor Order itu.</li>
+        </ol>
+      </div>
+
+      <div class="faq-key">
+        <h3>Judul emailnya "download", harus unduh apa?</h3>
+        <p>Gak ada yang perlu diunduh. EducAI dipakai langsung dari browser di HP atau laptop. Yang kamu butuhkan dari email itu cuma Nomor Order.</p>
+      </div>
+
+      <div class="faq">
+        <details><summary>Gak bisa masuk, gimana?</summary><div class="ans">Pastikan email yang diisi sama dengan email waktu checkout, dan Nomor Order disalin lengkap tanpa ada yang terlewat. Kalau baru saja bayar, tunggu 1 sampai 2 menit lalu coba lagi.</div></details>
+        <details><summary>Harganya berapa?</summary><div class="ans">Harganya tertera di halaman pembayaran setelah kamu klik tombol Mulai. Sekali bayar, tanpa biaya bulanan, dan semua fitur langsung terbuka.</div></details>
+        <details><summary>Ini app yang harus di-install?</summary><div class="ans">Tidak. EducAI dibuka lewat Chrome atau Safari di HP, atau browser di laptop.</div></details>
+        <details><summary>Perlu bikin akun atau password?</summary><div class="ans">Tidak. Cukup email saat membeli dan Nomor Order, sekali di satu browser.</div></details>
+        <details><summary>Aku belum punya ChatGPT atau Gemini.</summary><div class="ans">Gak masalah. Hasil Tes Titik Mulai menunjukkan langkah pasangnya, dan keduanya gratis. Tombol Buka ChatGPT dan Buka Gemini di dalam app juga bisa membukanya lewat browser tanpa install.</div></details>
+        <details><summary>Data dan karyaku aman?</summary><div class="ans">Latihan, karya, dan foto tersimpan di HP-mu saja. Kami gak bisa membacanya.</div></details>
+        <details><summary>Kalau ganti HP, progresnya ikut?</summary><div class="ans">Bisa. Buat kode Pindah Progres di menu Saya, masuk di HP baru dengan email dan Nomor Order yang sama, lalu tempel kodenya. Foto perlu dipilih ulang.</div></details>
+        <details><summary>Sehari berapa lama?</summary><div class="ans">15 menit, satu latihan. Kalau tertinggal, boleh dua latihan sehari.</div></details>
+        <details><summary>Ngetik pakai dua jari, susah gak?</summary><div class="ans">Ketuk ikon mikrofon di keyboard HP-mu, lalu bicara saja. Tulisannya muncul sendiri.</div></details>
+        <details><summary>Apa ini menjamin aku dapat kerja atau penghasilan?</summary><div class="ans">Tidak. EducAI melatih skill dan memberi alat. Hasilnya tergantung latihan dan usaha kamu menawarkan jasa atau menerapkannya di kerjaan.</div></details>
+        <details><summary>Gimana kalau aku berhenti di tengah jalan?</summary><div class="ans">Progres gak hilang. Lanjutkan kapan saja, atau ulang minggu yang terlewat. Bolos bukan tanda gagal.</div></details>
+        <details><summary>Setelah 28 hari selesai, terus gimana?</summary><div class="ans">Kamu dapat Evaluasi 28 Hari. Semua hari bisa diulang, Studio dan Kit Klien tetap jalan, dan kamu bisa mulai jalur lain.</div></details>
+        <details><summary>Ada biaya bulanan?</summary><div class="ans">Tidak ada. Sekali bayar.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="sec-deep">
+  <div class="wrap">
+    <div class="narrow center">
+      <h2>Malam ini cukup mulai dari 6 pertanyaan.</h2>
+      <p class="lead" style="margin-top:20px;">Kamu mungkin sudah kirim lamaran ke mana-mana, sudah nambah jam kerja, sudah nonton tutorial yang gak selesai. Satu hal yang belum: latihan 15 menit sehari yang dari hari pertama langsung menghasilkan karya.</p>
+      <p class="closing-line">Lowongan nanya umur. Latihan ini nggak.</p>
+      <div class="cta-block">
+        <a class="btn" href="checkout.html">Mulai Tes 2 Menit →</a>
+        <p class="btn-note">Dibuka dari browser HP atau laptop. Tanpa install, tanpa akun.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="logo" href="index.html">Educ<em>AI</em></a>
+    <small>© 2026 EducAI. Semua hak dilindungi.</small>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="sp">
+    <b>Tes titik mulai 2 menit</b>
+    <small>Buka dari HP, tanpa install</small>
+  </div>
+  <a class="btn" href="checkout.html">Mulai</a>
+</div>
+
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Tampilan app diperbesar">
+  <button type="button" class="lb-close" id="lbClose" aria-label="Tutup gambar">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9M14.5 5.5l-9 9" stroke="#1F2937" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="lb-inner"><img id="lbImg" alt=""></div>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('stickyCta');
+  var hero=document.querySelector('.hero');
+  if(!bar||!hero)return;
+  document.body.classList.add('has-sticky');
+  function check(){bar.classList.toggle('on',hero.getBoundingClientRect().bottom<0);}
+  check();
+  window.addEventListener('scroll',check,{passive:true});
+  window.addEventListener('resize',check);
+})();
+
+/* geser + titik untuk testimoni dan alat (HP) */
+function scroller(trackSel,itemSel,dotsId){
+  var track=document.querySelector(trackSel),dots=document.getElementById(dotsId);
+  if(!track||!dots)return;
+  var slides=track.querySelectorAll(itemSel),btns=dots.querySelectorAll('button');
+  function active(){
+    var mid=track.scrollLeft+track.clientWidth/2,best=0,min=Infinity;
+    for(var i=0;i<slides.length;i++){
+      var c=slides[i].offsetLeft+slides[i].offsetWidth/2,d=Math.abs(c-mid);
+      if(d<min){min=d;best=i;}
+    }
+    for(var j=0;j<btns.length;j++)btns[j].classList.toggle('on',j===best);
+  }
+  var t;
+  track.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(active,60);},{passive:true});
+  for(var k=0;k<btns.length;k++){
+    btns[k].addEventListener('click',function(){
+      var el=slides[Number(this.getAttribute('data-i'))];
+      if(!el)return;
+      track.scrollTo({left:el.offsetLeft-(track.clientWidth-el.offsetWidth)/2,behavior:'smooth'});
+    });
+  }
+  active();
+}
+scroller('.testi-grid','img','testiDots');
+scroller('#alatTrack','.alat-item','alatDots');
+
+/* tab alat (desktop) */
+(function(){
+  var tabs=document.querySelectorAll('.alat-tabs [role="tab"]');
+  function pick(tab){
+    for(var i=0;i<tabs.length;i++){
+      var on=tabs[i]===tab;
+      tabs[i].setAttribute('aria-selected',on?'true':'false');
+      tabs[i].setAttribute('tabindex',on?'0':'-1');
+      document.getElementById(tabs[i].getAttribute('aria-controls')).classList.toggle('on',on);
+    }
+  }
+  for(var i=0;i<tabs.length;i++){
+    tabs[i].addEventListener('click',function(){pick(this);});
+    tabs[i].addEventListener('keydown',function(e){
+      var idx=Array.prototype.indexOf.call(tabs,this),n=null;
+      if(e.key==='ArrowRight')n=tabs[(idx+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(idx-1+tabs.length)%tabs.length];
+      if(n){e.preventDefault();pick(n);n.focus();}
+    });
+  }
+})();
+
+/* lightbox: membuka versi gambar yang sedang tampil (HP atau desktop) */
+(function(){
+  var lb=document.getElementById('lightbox'),img=document.getElementById('lbImg'),close=document.getElementById('lbClose');
+  var last=null;
+  function open(src,alt){
+    img.src=src;img.alt=alt||'';
+    lb.classList.add('on');document.body.style.overflow='hidden';close.focus();
+  }
+  function shut(){lb.classList.remove('on');img.removeAttribute('src');document.body.style.overflow='';if(last)last.focus();}
+  var zs=document.querySelectorAll('[data-zoom]');
+  for(var i=0;i<zs.length;i++){
+    zs[i].setAttribute('tabindex','0');
+    zs[i].setAttribute('role','button');
+    zs[i].addEventListener('click',function(){last=this;open(this.currentSrc||this.src,this.alt);});
+    zs[i].addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}});
+  }
+  close.addEventListener('click',shut);
+  lb.addEventListener('click',function(e){if(e.target===lb)shut();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))shut();});
+})();
+</script>
+</body>
+</html>
